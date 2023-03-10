@@ -1,0 +1,45 @@
+<!DOCTYPE <html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+  body { padding-top:50px; }
+</style>
+  <meta charset="UTF-8">
+  <title>Toko Sejahtera - Halaman Admin</title>
+</head>
+<body>
+<div class="container">
+  <h1>Menu Administrator</h1>
+  <p>Proyek Ulangan Akhir Semester Pengantar Pemrograman Full Stack</p>
+  <a href="/" class="btn btn-info" role="button">Halaman Toko</a>
+  <a href="/admin" class="btn btn-info" role="button">Halaman Admin</a>
+  <a href="/tambah-produk" class="btn btn-info" role="button">Tambah Produk</a>
+  <a href="/tambah-informasi" class="btn btn-info" role="button">Tambah Informasi Toko</a>
+  <a href="/tambah-supplier" class="btn btn-info" role="button">Tambah Supplier</a>
+</div>
+<div class="container">
+	<hr>
+	<h3>Daftar Produk</h3>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Nama Produk</th>
+				<th scope="col">Foto Produk</th>
+				<th scope="col">Harga Produk</th>
+				<th scope="col">Aksi</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% cds.forEach(function(details) { %>
+			<tr>
+				<td><%= details.namaproduk %></td>
+				<td><img src="./<%= details.fotoproduk %>" alt="Produk" style="width:100px;"></td>
+				<td>Rp.<%= details.hargaproduk %></td>
+				<td><a href="/edit-produk/<%=details._id%>" class="btn btn-primary">Edit</a> <a href="/hapus-produk/<%=details._id%>" class="btn btn-primary">Hapus</a>
+				</tr>
+				<% }) %>
+			</tbody>
+		</div>
+	</body>
+</html>

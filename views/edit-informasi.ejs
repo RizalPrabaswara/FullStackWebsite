@@ -1,0 +1,43 @@
+<!DOCTYPE <html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+  body { padding-top:50px; }
+</style>
+  <meta charset="UTF-8">
+  <title>Toko Sejahtera - Halaman Admin</title>
+</head>
+<body>
+<div class="container">
+  <h1>Menu Administrator</h1>
+  <p>Proyek Ulangan Akhir Semester Pengantar Pemrograman Full Stack</p>
+  <a href="/" class="btn btn-info" role="button">Halaman Toko</a>
+  <a href="/admin" class="btn btn-info" role="button">Halaman Admin</a>
+  <a href="/tambah-informasi" class="btn btn-info" role="button">Tambah Informasi Toko</a>
+  <a href="/data-informasi" class="btn btn-info" role="button">Data Informasi Toko</a>
+</div>
+<div class="container">
+  <hr>
+  <div class="container">
+  <h3>Manajemen Informasi Toko</h3>
+  <% cds.forEach(function(details) { %>
+  <form action="/edit-toko/<%=details._id%>" method="POST">
+    <label>Nama Toko</label>
+    <input type="text" class="form-control" value="<%= details.namatoko %>" name="namatoko">
+    <label>Deskripsi Toko</label>
+    <input type="text" class="form-control" value="<%= details.deskripsitoko %>" name="deskripsitoko">
+    <label>Alamat Toko</label>
+    <input type="text" class="form-control" value="<%= details.alamattoko %>" name="alamattoko">
+    <label>Telepon Toko</label>
+    <input type="text" class="form-control" value="<%= details.telepontoko %>" name="telepontoko">
+    <br>
+    <button class="btn btn-primary" type="submit">Kirim</button>
+    <a href="/data-informasi" class="btn btn-info" role="button">Kembali</a>
+  </form>
+  <% }) %>
+  <br>
+</div>
+</div>
+</body>
+</html>

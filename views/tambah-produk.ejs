@@ -1,0 +1,39 @@
+<!DOCTYPE <html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+  body { padding-top:50px; }
+</style>
+  <meta charset="UTF-8">
+  <title>Toko Sejahtera - Halaman Admin</title>
+</head>
+<body>
+<div class="container">
+  <h1>Menu Administrator</h1>
+  <p>Proyek Ulangan Akhir Semester Pengantar Pemrograman Full Stack</p>
+  <a href="/" class="btn btn-info" role="button">Halaman Toko</a>
+  <a href="/admin" class="btn btn-info" role="button">Halaman Admin</a>
+  <a href="/tambah-produk" class="btn btn-info" role="button">Tambah Produk</a>
+  <a href="/data-produk" class="btn btn-info" role="button">Data Produk</a>
+</div>
+<div class="container">
+  <hr>
+  <div class="container">
+    <div class="container">
+  <h3>Toko Sejahtera - Tambah Produk</h3>
+  <form action="/tambah-produk" method="POST">
+    <label>Nama Produk</label>
+    <input type="text" class="form-control" placeholder="Nama Produk" name="namaproduk">
+    <label>Foto Produk (Contoh : minyakgorengsunco.jpg)</label>
+    <input type="text" class="form-control" placeholder="Foto Produk" name="fotoproduk">
+    <label>Harga</label>
+    <input type="text" class="form-control" placeholder="Harga Produk" name="hargaproduk">
+    <br>
+    <button class="btn btn-primary" type="submit">Tambah Data</button>
+    <a href="/admin" class="btn btn-info" role="button">Kembali</a>
+  </div>
+</div>
+</div>
+</body>
+</html>
